@@ -8,5 +8,41 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-  });
+    Id:{
+      type: DataTypes.UUID,
+      defaultValue:DataTypes.UUIDV4,
+      primaryKey: true,
+      allowNull: false
+    },
+    Image:{
+      type: DataTypes.STRING,
+      allowNull:false
+    },
+    minWeight:{
+      type: DataTypes.FLOAT,
+      allowNull:false
+    },
+    maxWeight:{
+      type: DataTypes.FLOAT,
+      allowNull:false,
+    },
+    minHeight:{
+      type: DataTypes.FLOAT,
+      allowNull:false,
+    },
+    maxHeight:{
+      type: DataTypes.FLOAT,
+      allowNull: false,
+    },
+    lifeSpan:{
+      type: DataTypes.STRING,
+      allowNull:false
+    },
+    //createindb funciona para ayudar en el filtro
+    ceateInDb:{
+      type: DataTypes.BOOLEAN,
+      allowNull:false,
+      defaultValue: false
+    }
+  },{timestamps: false});
 };
