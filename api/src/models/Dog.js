@@ -8,13 +8,13 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    Id:{
+    id:{
       type: DataTypes.UUID,
       defaultValue:DataTypes.UUIDV4,
       primaryKey: true,
       allowNull: false
     },
-    Image:{
+    image:{
       type: DataTypes.STRING,
       allowNull:false
     },
@@ -39,10 +39,10 @@ module.exports = (sequelize) => {
       allowNull:false
     },
     //createindb funciona para ayudar en el filtro
-    ceateInDb:{
-      type: DataTypes.BOOLEAN,
-      allowNull:false,
-      defaultValue: false
-    }
+    // ceateInDb:{
+    //   type: DataTypes.BOOLEAN,
+    //   allowNull:false,
+    //   defaultValue: false
+    // }
   },{timestamps: false});
 };
