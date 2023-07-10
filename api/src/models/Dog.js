@@ -18,19 +18,19 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull:false
     },
-    minWeight:{
+    weightMin:{
       type: DataTypes.FLOAT,
       allowNull:false
     },
-    maxWeight:{
+    weightMax:{
       type: DataTypes.FLOAT,
       allowNull:false,
     },
-    minHeight:{
+    heightMin:{
       type: DataTypes.FLOAT,
       allowNull:false,
     },
-    maxHeight:{
+    heightMax:{
       type: DataTypes.FLOAT,
       allowNull: false,
     },

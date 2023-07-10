@@ -35,10 +35,10 @@ const getDogsById = async (req,res) =>{
 }
 
 const postDog = async (req,res) =>{   
-    const {name, image, minWeight, maxWeight, minHeight, maxHeight, lifeSpan, temperaments } = req.body 
+    const {name, image, weightMin, weightMax, heightMin, heightMax, lifeSpan, temperaments } = req.body 
 
     try {
-            const dogo = await createDog(name, image, minWeight, maxWeight, minHeight, maxHeight, lifeSpan, temperaments)
+            const dogo = await createDog(name, image, weightMin, weightMax, heightMin, heightMax, lifeSpan, temperaments)
             return res.status(200).json(dogo)
         
     } catch (error) {

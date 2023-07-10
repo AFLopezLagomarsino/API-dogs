@@ -8,8 +8,10 @@ const allDogs = async () => {
             name: dogs.name,
             temperaments: dogs.temperament,
             lifespan: dogs.life_span,
-            weight: dogs.weight.metric,
-            height: dogs.height.metric,
+            weightMin: dogs.weight.metric.split(" - ")[0],
+            weightMax: dogs.weight.metric.split(" - ")[1],
+            heightMin: dogs.height.metric.split(" - ")[0],
+            heightMax: dogs.height.metric.split(" - ")[1],
             image: dogs.image.url,
         }
     })
