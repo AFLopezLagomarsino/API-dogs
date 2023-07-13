@@ -14,7 +14,7 @@ function SearchBar (){
         dispatch(getByBreed(name))
         setName("")
     }
-
+    //ver si el bug de no busqueda se puede solucionar con un on Search
     return(
         <div>
             <input type="search" onChange={handleChange} value={name} placeholder="search breed..." />       
