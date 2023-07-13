@@ -1,11 +1,16 @@
+// el nombre no es el correcto para las funcionalidades que tiene el componente, pero ya esta hecho de esta manera
 import { NavLink } from "react-router-dom";
 import SearchBar from "../searchBar/searchBar";
 import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useDispatch} from "react-redux";
+import {filterDogsByApiOrBd, orderAlphabet, orderByWeight} from "../../Redux/actions/actions"
 
 export default function Nav() {
     const location = useLocation();
     const [mostrarBarra, setMostrarBarra] = useState(false);
+    const dispatch = useDispatch()
+
 
     useEffect(() => {
         if (location.pathname === "/home") {
@@ -14,6 +19,19 @@ export default function Nav() {
             setMostrarBarra(false);
         }
     },[location])
+
+    function handleFilterApiBd (e){
+        dispatch(filterDogsByApiOrBd(e.target.value))
+    }
+
+    function handleOrderByAlphabet(e){
+        const order = e.target.value
+        dispatch(orderAlphabet(order))
+    }
+    function handleOrderByWeight(e){
+        const weight = e.target.value
+        dispatch(orderByWeight(weight))
+    }
 
     return (    
         <div>
@@ -25,19 +43,21 @@ export default function Nav() {
                 <NavLink to= "/dogs"style={{textDecoration: "none"}}>
                     <button> Create a Breed</button>
                 </NavLink>
-                {/* todo esto va en orderBy y filter: completar y revisar ya que selene es diferente*/}
                 <div>
-                    <select>
+                    <span>alfabeticamente:</span>
+                    <select onChange={e=> handleOrderByAlphabet(e)}>
                         <option value= "asc">Ascendente</option>
                         <option value= "desc">Descendente</option>
                     </select>
-                    <select>
-                        <option value="esto es el e target.value"></option>
+                    <span>por peso:</span>
+                    <select onChange={e=> handleOrderByWeight(e)}>
+                        <option value= "asc">Ascendente</option>
+                        <option value= "desc">Descendente</option>
                     </select>
-                    <select>
-                        <option value="todos"></option>
-                        <option value="BD"></option>
-                        <option value="api"></option>
+                    <select onChange={e => handleFilterApiBd(e)}>
+                        <option value="todos">todos</option>
+                        <option value="BD">BD</option>
+                        <option value="api">API</option>
                     </select>
                 </div>
             </div>
