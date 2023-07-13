@@ -39,10 +39,10 @@ module.exports = (sequelize) => {
       allowNull:false
     },
     //createindb funciona para ayudar en el filtro
-    // ceateInDb:{
-    //   type: DataTypes.BOOLEAN,
-    //   allowNull:false,
-    //   defaultValue: false
-    // }
+    ceateInDb:{
+       type: DataTypes.BOOLEAN,
+       allowNull:false,
+       defaultValue: false
+    }
   },{timestamps: false});
 };
