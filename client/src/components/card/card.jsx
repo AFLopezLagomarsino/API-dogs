@@ -7,10 +7,10 @@ function Card (props){
 
     return(
         <div>
-            <h2>{name}</h2>
+            <h2>breed: {name}</h2>
             <img src={image} alt={name}/>
             <p>{temperaments}</p>
-            <p>Weight: {weightMin} - {weightMax}</p>
+            <p>Weight: {weightMin} - {weightMax} kg</p>
         </div>
     )
 }
