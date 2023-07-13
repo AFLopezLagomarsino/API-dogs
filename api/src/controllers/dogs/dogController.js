@@ -39,7 +39,7 @@ const totalDogs = async() =>{
 
 const dogByBreed = async (name) => {
     const byName = await totalDogs()
-    const breed = await byName.find((dog)=> dog.name.toLowerCase() === name.toLowerCase())
+    const breed = await byName.filter((dog)=> dog.name.toLowerCase().includes(name.toLowerCase()))
     if (breed.length === 0){
         return "No existe esa raza de perro :P"
     }
